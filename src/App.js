@@ -1,11 +1,13 @@
 import {useState} from 'react';
 import {sendData} from './actions/index'
-import {useSelector,useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
+
 import './App.css';
+import List from './components/List';
 
 function App() {
   const [name, setName] = useState("");
-  const todos = useSelector(state => state.todo)
+ 
   const dispatch = useDispatch();
   return (
     <div className="App">
@@ -24,12 +26,8 @@ function App() {
      dispatch(sendData(name))
     }  
     }>Add Tasks</button>
-
-    {todos.map((todo,index)=>{
-      return (
-        <p key={index}>{todo}</p>
-      )
-    })}
+     <List/>
+    
     </div>
   );
 }
