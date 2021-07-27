@@ -5,10 +5,10 @@ const sendData =(state)=>{
     }
 }
 
-const removeData=(state)=>{
+const removeData=(id)=>{
     return{
         type:"REMOVE_TASK",
-        payload:state
+        payload:id
     }
 }
 
