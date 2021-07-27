@@ -1,9 +1,9 @@
 import {useState} from 'react';
-import {sendData} from './actions/index'
+import {sendData,fetchAPIdata} from './actions/index'
 import {useDispatch} from 'react-redux'
-
 import './App.css';
 import List from './components/List';
+//import FetchData from './components/FetchData';
 
 function App() {
   const [name, setName] = useState("");
@@ -26,6 +26,9 @@ function App() {
      dispatch(sendData(name))
     }  
     }>Add Tasks</button>
+     <button onClick={()=>{
+               dispatch(fetchAPIdata())
+            }}>Fetch All Data</button>  
      <List/>
     
     </div>

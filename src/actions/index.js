@@ -1,3 +1,4 @@
+
 const sendData =(state)=>{
     return{
         type:"ADD_TASK",
@@ -12,4 +13,18 @@ const removeData=(id)=>{
     }
 }
 
-export {sendData,removeData}
+const fetchAPIdata=()=>{
+   return (dispatch)=>{
+      fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((res)=>res.json())
+      .then((data)=>{       
+           return dispatch({
+          type:"FETCH",
+          payload:data
+      })
+
+      })
+     
+   }
+}
+export {sendData,removeData,fetchAPIdata}

@@ -9,7 +9,7 @@ const List = () => {
             {todos.map((todo,index)=>{
       return (
           <>
-        <p key={index}>{todo}</p>
+        <p key={index}>{todo.title}</p>
         <button style={{display:"inline-block"}} onClick={()=>{
            dispatch(removeData(index))
         }}>Remove Task</button>
